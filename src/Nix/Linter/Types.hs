@@ -99,7 +99,7 @@ prettySourcePos (SourcePos file l c) = pack file <> ":" <> pShow (unPos l) <> ":
 
 prettySourceSpan :: SrcSpan -> Text
 prettySourceSpan (SrcSpan pos1@(SourcePos f1 l1 c1) pos2@(SourcePos f2 l2 c2))
-  | f1 == f2 = base
+  | f1 == f2 = base -- hack, I don't know Haskell
   | f1 /= f2 = base <> prettySourcePos pos2 -- It could happen I guess?
   | l1 /= l2 = base <> pShow (unPos l2) <> ":" <> pShow (unPos c2)
   | c1 /= c2 = base <> pShow (unPos c2)
