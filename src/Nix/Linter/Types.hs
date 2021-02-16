@@ -146,7 +146,7 @@ describe full@(Offense {..}) = let
     _ -> pShow o
 
 prettyOffense :: Offense -> Text
-prettyOffense o@(Offense {..}) = describe o <> " at " <> prettySourceSpan pos
+prettyOffense o@(Offense {..}) = prettySourceSpan pos <> ":" <> describe o 
 
 data OffenseCategory
   = UnusedLetBind
