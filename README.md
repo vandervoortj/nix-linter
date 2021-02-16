@@ -1,6 +1,14 @@
 # `nix-linter`
 
-[![Build Status](https://travis-ci.org/Synthetica9/nix-linter.svg?branch=master)](https://travis-ci.org/Synthetica9/nix-linter)
+Micro editor compatible fork. Output is reversed for easier parsing:
+
+```
+filename:line:column:message
+```
+
+If anyone knows more about LUA and Micros parsing (You probably do), 
+please attempt to contribute directly to Micro at
+https://github.com/zyedidia/micro
 
 `nix-linter` is a program to check for several common mistakes or stylistic
 errors in Nix expressions, such as unused arguments, empty let blocks,
