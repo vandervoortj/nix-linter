@@ -1,10 +1,26 @@
 # `nix-linter`
 
+Plugin https://github.com/vandervoortj/nix-micro-plugin
+
 Micro editor compatible fork. Output is reversed for easier parsing:
 
 ```
 filename:line:column:message
 ```
+Can be installed using an overlay:
+```
+self: super: {
+  nix-linter = super.nix-linter.overrideAttrs (oldAttrs: {
+    src = super.fetchFromGitHub {
+      owner = "vandervoortj";
+      repo = "nix-linter";
+      rev = "bd6fd4c9abf3253b3a2c336aab21415f2ce9e346";
+      sha256 = "08mdaimsml9f78s77z9zdsbwn50xrx7nshj7sy9d40q440lky69p";
+    };
+  });
+}
+```
+Then installed as normal for pkgs.nix-linter
 
 If anyone knows more about LUA and Micros parsing (You probably do), 
 please attempt to contribute directly to Micro at
